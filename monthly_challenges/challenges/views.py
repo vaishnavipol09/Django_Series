@@ -1,6 +1,7 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect # type: ignore
 from django.urls import reverse # type: ignore
+from django.template.loader import render_to_string # type: ignore
 
 
 monthly_challenges_code = {
@@ -45,7 +46,7 @@ def monthly_challenges_by_integer(request , month):
 def monthly_challenges(request , month):
     try:
         challenge_text = monthly_challenges_code[month] 
-        response_data = f"<h1>{challenge_text}</h1>"
+        response_data = render_to_string("challenges/challenge.html")
         return HttpResponse(response_data)
     except:
         return HttpResponseNotFound("<h1>This is month is not a valid<h2>")    
