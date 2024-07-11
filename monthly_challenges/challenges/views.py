@@ -1,6 +1,6 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect # type: ignore
-from django.urls import reverse
+from django.urls import reverse # type: ignore
 
 
 monthly_challenges_code = {
