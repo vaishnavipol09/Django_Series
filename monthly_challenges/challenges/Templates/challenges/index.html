@@ -6,6 +6,13 @@
 
 
 {% block content %}
+
+<header>
+    <nav>
+        <a href = "">All Challenges</a>
+    </nav>
+</header>
+
     <ul>
         {% for month in months %}
         <li><a href="{% url "month_challenge" month %}">{{ month | title }}</a></li>
