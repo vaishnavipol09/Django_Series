@@ -1,6 +1,7 @@
 from django.shortcuts import render # type: ignore
-from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect # type: ignore
+from django.http import Http404 , HttpResponseNotFound , HttpResponseRedirect # type: ignore
 from django.urls import reverse # type: ignore
+from django.template.loader import render_to_string # type: ignore
 
 
 
@@ -47,8 +48,7 @@ def monthly_challenges(request , month):
             "month_name" : month
         })
     except:
-        return HttpResponseNotFound("<h1>This is month is not a valid<h2>")    
-
+        raise Http404()
            
 
 
