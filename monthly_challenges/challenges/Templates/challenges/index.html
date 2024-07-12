@@ -7,11 +7,7 @@
 
 {% block content %}
 
-<header>
-    <nav>
-        <a href = "">All Challenges</a>
-    </nav>
-</header>
+{% include "challenges/includes/header.html" with active_page="index" %}
 
     <ul>
         {% for month in months %}

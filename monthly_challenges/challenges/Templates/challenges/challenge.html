@@ -11,7 +11,7 @@
 
 {% block content %}
 
-{% include "challenges/includes/header.html" %}
+{% include "challenges/includes/header.html" with active_page="challenges"%}
 
     <h1>{{ month_name | title }} Challenge</h1>
     {% if text is not None %}
